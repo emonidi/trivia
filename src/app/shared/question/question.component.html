@@ -1,0 +1,20 @@
+<div class="component --red-background">
+  <div class="component__wrapper">
+    <div class="question">
+      <div class="question__category --question-row">
+        {{question.category}}
+      </div>
+      <div class="question__counter --question-row">
+        {{question.number}}
+      </div>
+      <div class="question__text --question-row" [innerHTML]="question.question">
+        
+      </div>
+      <div class="question__answers --question-row">
+        <div class="question__answer" *ngFor="let answer of question.answers;let i = index">
+          <button md-raised-button md-button (click)=setAnswer(i)>{{answer}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

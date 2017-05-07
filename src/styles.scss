@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    margin:0;
+    padding:0;
+}
+
+.--red-background{
+ background: #c62828;
+}
+
+.component{
+        flex-direction: column;
+       
+        height: calc(100vh - 56px);
+   .component__wrapper{
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        height: 100%;
+        .component__title{
+            flex: 1;
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+            h2{
+                font-size: 2rem;
+            }
+            h1{
+                font-size: 3.5rem;
+            }
+        }
+        .component__image{
+            flex: 3;
+            text-align: center;
+            img{
+                max-width: 100%;
+            }
+        }
+
+        .component__buttons{
+            flex: 2;
+            display: flex;
+            @media (max-width:768px){
+                flex-direction: column;
+            }
+            flex-direction: row;
+            .component__button{
+             width: 100%;
+             text-align: center;
+             padding-top: 1em;
+               button{
+                 @media (max-width:768px){
+                     width: 100%;
+                 }
+                 width: 90%;
+               }
+            }
+        }
+    }
+}

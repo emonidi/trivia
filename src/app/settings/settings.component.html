@@ -1,0 +1,42 @@
+
+<div class="component">
+  <div class="component__wrapper">
+   <md-card>
+    <md-card-header class="--red-background">
+    <md-card-title>
+      <strong>Number of questions:</strong>
+      </md-card-title>
+  </md-card-header>
+  <md-card-content>
+      <md-slider
+        [max]="50"
+        [min]="10"
+        [step]="10"
+        [tick-interval]="1"
+        [value]="settings.numberOfQuestions"
+        [thumb-label]="true"
+        (input)="inputSet($event)"
+        >
+        </md-slider>
+  </md-card-content>
+   </md-card>
+   <md-card>
+     <md-card-header class="--red-background">
+       <md-card-title>
+         <strong>Difficulty:</strong>
+       </md-card-title>
+     </md-card-header>
+     <md-card-content>
+      <md-radio-group (ngModelChange)="difficultyChanged($event)" [(ngModel)]="settings.difficulty">
+        <md-radio-button *ngFor="let diff of difficulties" [value]="diff">
+         {{diff.toUpperCase()}}
+        </md-radio-button>
+      </md-radio-group>
+     </md-card-content>
+   </md-card>
+       <button md-raised-button md-button color="primary" routerLink='/'>Done</button>
+
+  </div>
+
+
+</div>
